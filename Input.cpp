@@ -19,48 +19,7 @@ string Input::GetSrting(Output *pOut)
 	//"BACKSPACE" should be also supported
 	//User should see what he is typing at the status bar
 
-    string a;
-    char x;
-    keytype z;
-    pWind->FlushKeyQueue();
-
-    while (true)
-    {
-        z = pWind->WaitKeyPress(x);
-
-        if (x == '\r')
-        {
-			pWind->FlushMouseQueue();
-            pWind->DrawString(300, 300, a);
-			pOut->PrintMsg(" ");
-
-            break;
-        }
-        else if (x == '\b')
-        {
-            if (a.length() > 0)
-            {
-                int b = a.length();
-
-                a.erase(b - 1, 1);
-				pOut->PrintMsg(a);
-            }
-
-        }
-        else if (z == ESCAPE)
-        {
-            a.clear();
-            break;
-        }
-        else
-        {
-            a += x;
-            pOut->PrintMsg(a);
-
-        }
-    }
-    return a;    
-
+	return NULL;
 }
 
 //This function reads the position where the user clicks to determine the desired action
@@ -74,7 +33,7 @@ ActionType Input::GetUserAction() const
 		//[1] If user clicks on the Toolbar
 		if ( y >= 0 && y < UI.ToolBarHeight)
 		{	
-			//Check which Menu item was clicked
+			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
 			int ClickedItemOrder = (x / UI.ToolItemWidth);
 			//Divide x coord of the point clicked by the menu item width (int division)
@@ -82,8 +41,21 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
+
+			case ITM_Buff: return ADD_Buff;
+			case ITM_INV: return ADD_INV ;
 			case ITM_AND2: return ADD_AND_GATE_2;
 			case ITM_OR2: return ADD_OR_GATE_2;
+			case ITM_NAND2: return ADD_NAND_GATE_2;
+			case ITM_NOR2: return ADD_NOR_GATE_2 ;
+			case ITM_XOR: return ADD_XOR_GATE_2;
+			case ITM_XNOR: return ADD_XNOR_GATE_2 ;
+			case ITM_AND3: return ADD_AND_GATE_3;
+			case ITM_NOR3: return ADD_NOR_GATE_3;
+			case ITM_XOR3: return ADD_XOR_GATE_3;
+			case ITM_Switch: return ADD_Switch;
+			case ITM_LED: return ADD_LED;
+			case ITM_CONNECTION: return ADD_CONNECTION;
 			case ITM_EXIT: return EXIT;	
 			
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar

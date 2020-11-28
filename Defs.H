@@ -6,6 +6,7 @@
 //All possible actions
 enum ActionType 
 {
+	
 	ADD_Buff,			//Add 1-input Buffer gate
 	ADD_INV,			//Add 1-input Inverter gate
 	ADD_AND_GATE_2,		//Add 2-input AND gate
@@ -20,6 +21,8 @@ enum ActionType
 	ADD_Switch,			//Add Switch
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
+	
+
 
 	ADD_Label,			//Add Label to a Component, a Connection
 	EDIT_Label,			//Edit Label of a Component, a Connection
@@ -66,11 +69,23 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
+	//TODO: Add more items names here //DONE// momken azawed law e7tagt
+	
+	ITM_Buff,      
+	ITM_INV,
 	ITM_AND2,		//AND gate item in menu
 	ITM_OR2,		//OR gate item in menu
-	
+	ITM_NAND2,
+	ITM_NOR2,
+	ITM_XOR,
+	ITM_XNOR,
+	ITM_AND3,
+	ITM_NOR3,
+	ITM_XOR3,
+	ITM_Switch,
+	ITM_LED,
+	ITM_CONNECTION,
 	ITM_EXIT,		//Exit item
-	//TODO: Add more items names here
 	
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
 	

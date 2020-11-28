@@ -189,7 +189,7 @@ int main()
 
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar and print it inside the drawing area
-
+        string m = pIn->GetSrting(pOut);
 
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();

@@ -240,6 +240,29 @@ int main()
 		case ADD_XNOR_GATE_2:
 				pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
 				break;
+		case ADD_AND_GATE_3:
+				pOut->PrintMsg("Action: add 3-input AND gate , Click anywhere");
+				break;
+
+		case ADD_NOR_GATE_3:
+				pOut->PrintMsg("Action: add 3-input NOR gate , Click anywhere");
+				break;
+
+		case ADD_XOR_GATE_3:
+				pOut->PrintMsg("Action: add 3-input XOR gate , Click anywhere");
+				break;
+
+		case ADD_Switch:
+				pOut->PrintMsg("Action: add a Switch , Click anywhere");
+				break;
+
+		case ADD_LED:
+				pOut->PrintMsg("Action: add a LED , Click anywhere");
+				break;
+
+		case ADD_CONNECTION:
+				pOut->PrintMsg("Action: add a CONNECTION , Press on an Outpout Pin");
+				break;
 
 		case SELECT:
 				pOut->PrintMsg("Action: a click on the Drawing area, Click anywhere");

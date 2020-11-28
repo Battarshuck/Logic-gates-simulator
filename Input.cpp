@@ -13,6 +13,54 @@ void Input::GetPointClicked(int &x, int &y)
 
 string Input::GetSrting(Output *pOut)
 {
+	string a;
+
+	char x;
+
+	keytype z;
+
+	pWind->FlushKeyQueue();
+
+	while (true)
+	{
+		z = pWind->WaitKeyPress(x);
+
+		if (x == '\r')
+		{
+			pWind->FlushMouseQueue();
+
+			pWind->DrawString(300, 300, a);
+
+			pOut->PrintMsg(" ");
+
+			break;
+		}
+		else if (x == '\b')
+		{
+			if (a.length() > 0)
+			{
+				int b = a.length();
+
+				a.erase(b - 1, 1);
+
+				pOut->PrintMsg(a);
+			}
+		}
+		else if (z == ESCAPE)
+		{
+			a.clear();
+			pOut->PrintMsg(" ");
+			break;
+		}
+		else
+		{
+			a += x;
+			pOut->PrintMsg(a);
+
+		}
+	}
+	return a;
+
 	///TODO: Implement this Function
 	//Read a complete string from the user until the user presses "ENTER".
 	//If the user presses "ESCAPE". This function should return an empty string.

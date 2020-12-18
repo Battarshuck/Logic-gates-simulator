@@ -14,12 +14,13 @@ struct UI_Info	//User Interface Info.
 {
 	MODE AppMode;		//Application Mode (design or simulation)
 	
-	 const int	width = 1000, height = 750,	//Window width and height
-						wx = 15 , wy = 15,			//Window starting coordinates
-						StatusBarHeight = 50,	//Status Bar Height
-						ToolBarHeight = 90,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-						ToolItemWidth = 100;		//Width of each item in toolbar menu
-
+	const int	width = 1400, height = 800,	//Window width and height
+		wx = 15, wy = 15,			//Window starting coordinates
+		StatusBarHeight = 50,	//Status Bar Height
+		ToolBarHeight = 70,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
+		ToolItemWidth = 90,		//Width of each item in toolbar menu
+		SimBarHeight = 70,
+		SimItemWidth = 90;
 	color DrawColor;		//Drawing color
 	color SelectColor;		//Highlighting color
 	color ConnColor;		//Connector color

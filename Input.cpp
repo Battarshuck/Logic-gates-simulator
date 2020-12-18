@@ -121,6 +121,36 @@ ActionType Input::GetUserAction() const
 	}
 	else	//Application is in Simulation mode
 	{
+		if (y >= 0 && y < UI.SimBarHeight)
+		{
+
+			int ClickedItemOrder = (x / UI.SimItemWidth);
+
+			switch (ClickedItemOrder)
+			{
+			case ITM_SIM: break;
+			case ITM_ADD_Label:return ADD_Label;
+			case ITM_EDIT_Label:return EDIT_Label;
+			case ITM_TRUTH:return Create_TruthTable;
+			case ITM_CHANGE_SWITCH:return Change_Switch;
+			case ITM_DEL:return DEL;
+			case ITM_MOVE:return MOVE;
+			case ITM_SAVE:return SAVE;
+			case ITM_LOAD:return LOAD;
+			case ITM_UNDO:return UNDO;
+			case ITM_REDO:return REDO;
+			case ITM_DSN_MODE:return DSN_MODE;
+			case ITM_SIM_MODE:return SIM_MODE;
+			//case ITM_STATUSBAR:return STATUS_BAR;
+			}
+
+		}
+
+		if (y > UI.SimBarHeight && x < UI.height-UI.StatusBarHeight)
+		{
+			return SELECT;
+		}
+		
 		return SIM_MODE;	//This should be changed after creating the compelete simulation bar 
 	}
 

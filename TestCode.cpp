@@ -153,8 +153,6 @@ int main()
 	/// 2.7- Switch and LED test
 	pOut->PrintMsg("Drawing Switch and LED, Normal and Highlighted,  Click to continue");
 
-	///TODO: Add code to draw Switch and LED, Normal and Highlighted for each
-	
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawLEDOFF(GfxInfo);
 
@@ -167,6 +165,7 @@ int main()
 
 	GfxInfo.x1 = 250;	GfxInfo.y1 = 300;
 	pOut->DrawSWITCHOFF(GfxInfo, true);
+	///TODO: Add code to draw Switch and LED, Normal and Highlighted for each
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
@@ -321,6 +320,13 @@ int main()
 			break;
 		case SAVE:
 			pOut->PrintMsg("Action: Save Circuit");
+			break;
+		case UNDO:
+			pOut->PrintMsg("Action: Undo Change");
+			break;
+		case REDO:
+			pOut->PrintMsg("Action: Redo Change");
+			break;
 		case EXIT:
 			break;
 		}

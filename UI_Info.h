@@ -35,12 +35,18 @@ struct UI_Info	//User Interface Info.
 
 				OR2_Width = 90,
 				OR2_Height = 55,
-				
+
 				NOR2_Width = 85,
 				NOR2_Height = 55,
 
 				NOT_Width = 85,
-				NOT_Height = 70;
+				NOT_Height = 70,
+
+				LED_Width = 40,
+				LED_Height = 50,
+
+				SWITCH_Width = 50,
+				SWITCH_Height = 40;
 	
 }UI;	//create a single global object UI
 

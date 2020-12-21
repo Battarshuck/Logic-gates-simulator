@@ -321,6 +321,9 @@ int main()
 		case SAVE:
 			pOut->PrintMsg("Action: Save Circuit");
 			break;
+		case LOAD:
+			pOut->PrintMsg("Action: Load Circuit");
+			break;
 		case UNDO:
 			pOut->PrintMsg("Action: Undo Change");
 			break;

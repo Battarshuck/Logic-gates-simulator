@@ -285,6 +285,53 @@ void Output::DrawBUFFER(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NOT_Width, UI.NOT_Height);
 }
 
+///////////////////////////////////////////////////////////////////
+// LEDs and switches
+
+void Output::DrawLEDOFF(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\LEDnSwitches\\LED_select.jpg";
+	else
+		GateImage = "Images\\LEDnSwitches\\LED.jpg";
+
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
+}
+
+void Output::DrawLEDON(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\LEDnSwitches\\LED_Hi_select.jpg";
+	else
+		GateImage = "Images\\LEDnSwitches\\LED_Hi.jpg";
+
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
+}
+
+void Output::DrawSWITCHOFF(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\LEDnSwitches\\switch_on_select.jpg";
+	else
+		GateImage = "Images\\LEDnSwitches\\switch_on.jpg";
+
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.SWITCH_Width, UI.SWITCH_Height);
+}
+
+void Output::DrawSWITCHON(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\LEDnSwitches\\switch_off_select.jpg";
+	else
+		GateImage = "Images\\LEDnSwitches\\switch_off.jpg";
+
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.SWITCH_Width, UI.SWITCH_Height);
+}
+
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	//TODO: Add code to draw connection
